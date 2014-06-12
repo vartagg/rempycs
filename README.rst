@@ -30,5 +30,6 @@ Usage
 -----
 
 .. code:: bash
+
     $ cd /directory_with_python_sources
     $ rempycs
