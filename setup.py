@@ -2,31 +2,25 @@
 # -*- coding: utf-8 -*-
 
 import os
-import sys
+from setuptools import setup
+
+version = "1.0"
+
+description = (
+    'Simple Python .pyc files remover.'
+)
 
 
-try:
-    from setuptools import setup
-except ImportError:
-    from distutils.core import setup
+def read(fname):
+    return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
-
-readme = open('README.rst').read()
-history = open('HISTORY.rst').read().replace('.. :changelog:', '')
-
-requirements = [
-    # TODO: put package requirements here
-]
-
-test_requirements = [
-    # TODO: put package test requirements here
-]
+long_description = read('README.rst')
 
 setup(
     name='rempycs',
-    version='0.1.0',
-    description='Python .pyc files remover',
-    long_description=readme + '\n\n' + history,
+    version='1.0',
+    description=description,
+    long_description=long_description,
     author='Vladimir Chub',
     author_email='vartagg@users.noreply.github.com',
     url='https://github.com/vartagg/rempycs',
@@ -36,24 +30,22 @@ setup(
     package_dir={'rempycs':
                  'rempycs'},
     include_package_data=True,
-    install_requires=requirements,
     license="BSD",
     zip_safe=False,
-    keywords='rempycs',
+    keywords='rempycs,pyc,pycs',
     classifiers=[
-        'Development Status :: 2 - Pre-Alpha',
+        'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
+        'Intended Audience :: System Administrators',
         'License :: OSI Approved :: BSD License',
         'Natural Language :: English',
-        "Programming Language :: Python :: 2",
+        'Programming Language :: Python :: 2',
         'Programming Language :: Python :: 2.6',
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
     ],
-    test_suite='tests',
-    tests_require=test_requirements,
     entry_points = {
         'console_scripts': [
             'rempycs = rempycs:main'

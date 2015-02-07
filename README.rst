@@ -23,7 +23,7 @@ Installation
 
 .. code:: bash
 
-    $ pip install -e git+https://github.com/vartagg/rempycs.git#egg=rempycs
+    $ pip install rempycs
 
 
 Usage
